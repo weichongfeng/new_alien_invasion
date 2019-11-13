@@ -1,5 +1,6 @@
-import pygame
+import pygame, time
 from pygame.sprite import Sprite
+from alien_bullet import AlienBullet
 
 class Alien(Sprite):
     """表示单个外星人的类"""
@@ -23,6 +24,9 @@ class Alien(Sprite):
         # 存储外星人的准确位置
         self.y = float(self.rect.x)
 
+        # 最后一次发射子弹的时间
+        self.las_fire_time = round(time.time(),1)
+
     def blitme(self):
         """在指定的位置绘制外星人"""
         self.screen.blit(self.image, self.rect)
@@ -38,5 +42,9 @@ class Alien(Sprite):
 
     def update(self):
         """向左或向右移动外星人"""
-        self.y += 0.5
+        self.y += 0.2
         self.rect.y = self.y
+
+    def update_last_fire_time(self):
+        """更新最后开火时间"""
+        self.las_fire_time = round(time.time(), 1)
