@@ -159,7 +159,8 @@ def create_fleet(ai_settings, screen, aliens):
 
 def create_alien_bullet(ai_settings, screen, aliens, ship, alien_bullets):
     for alien in aliens:
-        if round(time.time(), 1) - alien.las_fire_time >= 2:
+        if round(time.time(), 1) - alien.las_fire_time >= ai_settings.alien_bullet_time and \
+                alien.rect.bottom < ai_settings.screen_height / 2:
             alien_bullet = AlienBullet(ai_settings, screen, alien, ship)
             alien_bullets.add(alien_bullet)
             alien.update_last_fire_time()

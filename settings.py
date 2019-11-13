@@ -21,7 +21,7 @@ class Settings():
         self.alien_bullet_speed = 0.3
         self.alien_bullet_width = 5
         self.alien_bullet_height = 5
-        self.alien_bullet_color = 255, 0, 0
+        self.alien_bullet_time = 1.5
 
         # 外星人设置
         self.alien_speed_factor = 1

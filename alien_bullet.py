@@ -21,7 +21,6 @@ class AlienBullet(Sprite):
         self.y = float(self.rect.y)
         self.x = float(self.rect.x)
 
-        self.color = ai_settings.bullet_color
         self.y_speed_factor = ai_settings.alien_bullet_speed
         self.x_speed_factor = self.y_speed_factor * (ship.rect.centerx - alien.rect.centerx) / (ship.rect.centery - alien.rect.centery)
 
